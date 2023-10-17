@@ -1,0 +1,103 @@
+INSERT INTO Agence (Nom, Adresse, NumTel, Mail) VALUES
+('Agence Paris', '12 Rue de la Paix, 75008 Paris', '0123456789', 'paris@example.com'),
+('Agence Lyon', '25 Rue de la Liberté, 69002 Lyon', '0234567890', 'lyon@example.com'),
+('Agence Marseille', '10 Rue du Vieux Port, 13001 Marseille', '0345678901', 'marseille@example.com'),
+('Agence Lille', '8 Rue Nationale, 59000 Lille', '0456789012', 'lille@example.com'),
+('Agence Toulouse', '5 Place du Capitole, 31000 Toulouse', '0567890123', 'toulouse@example.com'),
+('Agence Bordeaux', '15 Rue Sainte-Catherine, 33000 Bordeaux', '0678901234', 'bordeaux@example.com'),
+('Agence Nantes', '20 Rue de Strasbourg, 44000 Nantes', '0789012345', 'nantes@example.com'),
+('Agence Strasbourg', '3 Place Kléber, 67000 Strasbourg', '0890123456', 'strasbourg@example.com'),
+('Agence Montpellier', '18 Rue Foch, 34000 Montpellier', '0901234567', 'montpellier@example.com'),
+('Agence Nice', '14 Promenade des Anglais, 06000 Nice', '0912345678', 'nice@example.com');
+
+
+
+INSERT INTO Technicien (Qualification, NumAgence) VALUES
+('Ingénieur certifié', 1),
+('Technicien expérimenté', 2),
+('Ingénieur junior', 3),
+('Technicien débutant', 4),
+('Spécialiste en maintenance', 5),
+('Ingénieur système', 6),
+('Expert en réparation', 7),
+('Technicien en électroménager', 8),
+('Spécialiste en réseaux', 9),
+('Ingénieur en télécommunications', 10);
+
+
+INSERT INTO Intervention (DateIntervention, Commentaire, IdTechnicien) VALUES
+('2023-10-10', 'Intervention 1', 1),
+('2023-10-11', 'Intervention 2', 2),
+('2023-10-12', 'Intervention 3', 3),
+('2023-10-13', 'Intervention 4', 4),
+('2023-10-14', 'Intervention 5', 5),
+('2023-10-15', 'Intervention 6', 6),
+('2023-10-16', 'Intervention 7', 7),
+('2023-10-17', 'Intervention 8', 8),
+('2023-10-18', 'Intervention 9', 9),
+('2023-10-19', 'Intervention 10', 10);
+
+
+
+INSERT INTO MaterielVerifie (Label, Description, Temps, IdIntervention) VALUES
+('Materiel 1', 'Description 1', '01:30:00', 1),
+('Materiel 2', 'Description 2', '02:15:00', 2),
+('Materiel 3', 'Description 3', '03:00:00', 3),
+('Materiel 4', 'Description 4', '01:45:00', 4),
+('Materiel 5', 'Description 5', '02:30:00', 5),
+('Materiel 6', 'Description 6', '01:15:00', 6),
+('Materiel 7', 'Description 7', '02:45:00', 7),
+('Materiel 8', 'Description 8', '01:00:00', 8),
+('Materiel 9', 'Description 9', '03:15:00', 9),
+('Materiel 10', 'Description 10', '02:00:00', 10);
+
+INSERT INTO TypeMateriel (typeMateriel, libelle) VALUES
+('Type1', 'Libellé1'),
+('Type2', 'Libellé2'),
+('Type3', 'Libellé3'),
+('Type4', 'Libellé4'),
+('Type5', 'Libellé5'),
+('Type6', 'Libellé6'),
+('Type7', 'Libellé7'),
+('Type8', 'Libellé8'),
+('Type9', 'Libellé9'),
+('Type10', 'Libellé10');
+
+
+INSERT INTO Client (raison_social, numero_siren, cope_ape, adresse_postal, numero_telphone, numero_telecopie, email, distance_agence, duree_moyenne_deplacement, agence_id) VALUES
+('Client1', '123456789', 'A123', '1 Rue Client, 75001 Paris', '0123456789', '0123456789', 'client1@example.com', 5.2, 25, 1),
+('Client2', '234567890', 'B234', '2 Rue Client, 69001 Lyon', '0234567890', '0234567890', 'client2@example.com', 7.8, 30, 2),
+('Client3', '345678901', 'C345', '3 Rue Client, 13001 Marseille', '0345678901', '0345678901', 'client3@example.com', 4.3, 20, 3),
+('Client4', '456789012', 'D456', '4 Rue Client, 59000 Lille', '0456789012', '0456789012', 'client4@example.com', 6.5, 35, 4),
+('Client5', '567890123', 'E567', '5 Rue Client, 31000 Toulouse', '0567890123', '0567890123', 'client5@example.com', 8.1, 28, 5),
+('Client6', '678901234', 'F678', '6 Rue Client, 33000 Bordeaux', '0678901234', '0678901234', 'client6@example.com', 3.9, 22, 6),
+('Client7', '789012345', 'G789', '7 Rue Client, 44000 Nantes', '0789012345', '0789012345', 'client7@example.com', 9.6, 40, 7),
+('Client8', '890123456', 'H890', '8 Rue Client, 67000 Strasbourg', '0890123456', '0890123456', 'client8@example.com', 7.2, 33, 8),
+('Client9', '901234567', 'I901', '9 Rue Client, 34000 Montpellier', '0901234567', '0901234567', 'client9@example.com', 6.7, 27, 9),
+('Client10', '012345678', 'J012', '10 Rue Client, 06000 Nice', '0912345678', '0912345678', 'client10@example.com', 5.4, 29, 10);
+
+
+INSERT INTO MaterielInstalle (typeMateriel, dateVente, dateInstall, prixVente, numero_client) VALUES
+('Type1', '2023-09-01', '2023-09-05', 500.00, 1),
+('Type2', '2023-08-25', '2023-08-30', 800.00, 2),
+('Type3', '2023-07-20', '2023-07-25', 600.00, 3),
+('Type4', '2023-06-15', '2023-06-20', 700.00, 4),
+('Type5', '2023-05-10', '2023-05-15', 900.00, 5),
+('Type6', '2023-04-05', '2023-04-10', 400.00, 6),
+('Type7', '2023-03-01', '2023-03-05', 300.00, 7),
+('Type8', '2023-02-15', '2023-02-20', 200.00, 8),
+('Type9', '2023-01-10', '2023-01-15', 1000.00, 9),
+('Type10', '2022-12-05', '2022-12-10', 1200.00, 10);
+
+
+INSERT INTO Contrat (date_signature, date_echeance, date_renouvellement, client_id) VALUES
+('2023-09-01', '2024-09-01', '2025-09-01', 1),
+('2023-08-25', '2024-08-25', '2025-08-25', 2),
+('2023-07-20', '2024-07-20', '2025-07-20', 3),
+('2023-06-15', '2024-06-15', '2025-06-15', 4),
+('2023-05-10', '2024-05-10', '2025-05-10', 5),
+('2023-04-05', '2024-04-05', '2025-04-05', 6),
+('2023-03-01', '2024-03-01', '2025-03-01', 7),
+('2023-02-15', '2024-02-15', '2025-02-15', 8),
+('2023-01-10', '2024-01-10', '2025-01-10', 9),
+('2022-12-05', '2023-12-05', '2024-12-05', 10);
